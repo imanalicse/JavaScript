@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="download">Download</button>
+    <script>
+        var btn = document.getElementById('download');
+        btn.addEventListener('click', function () {
+            const _event = document.createEvent('MouseEvent');
+            _event.initEvent('click', false, false);
+            const href = 'https://images.pexels.com/photos/34950/pexels-photo.jpg?cs=srgb&dl=abandoned-forest-industry-34950.jpg&fm=jpg';
+            const a = document.createElement('a');
+            a.download = 'photo.jpg';
+            a.href = href;
+            document.body.appendChild(a);
+            a.dispatchEvent(_event);
+            URL.revokeObjectURL(href);
+            document.body.removeChild(a);
+        });
+    </script>
+</body>
+
+</html>
