@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Debounce</title>
-</head>
+<button id="buttonId">click me</button>
+<script>
+    const debounce = (fn, delay) => {
+        let timeoutId;
+        return function(...args) {
+            if (timeoutId) {
+                clearTimeout(timeoutId)
+            }
+            timeoutId = setTimeout(()=>{
+                fn()
+            }, delay)
+        }    
+    }
+    
+    let counter = 0;
+    var button = document.getElementById('buttonId');
+    button.addEventListener('click', debounce(function() {
+        counter++;
+        console.log("clicked " + counter)
+    }, 2000));
 
-<body>
-    <button id="buttonId">click me</button>
-    <script>
-        const debounce = (fn, delay) => {
-            let timeoutId;
-           return function(...args) {
-                if (timeoutId) {
-                    clearTimeout(timeoutId)
-                }
-               timeoutId = setTimeout(()=>{
-                    fn()
-               }, delay)
-           }    
-        }
-        
-        let counter = 0;
-        var button = document.getElementById('buttonId');
-        button.addEventListener('click', debounce(function() {
-            counter++;
-            console.log("clicked " + counter)
-        }, 2000));
-
-    </script>
-</body>
-
-</html>
+</script>
