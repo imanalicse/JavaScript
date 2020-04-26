@@ -1,5 +1,5 @@
 
-<button id="buttonId">click me</button>
+<button id="buttonId">debounce</button>
 <script>
     const debounce = (fn, delay) => {
         let timeoutID;
@@ -15,7 +15,7 @@
     
     let counter = 0;
     var button = document.getElementById('buttonId');
-    button.addEventListener('click', debounce(function() {
+    button.addEventListener('click', debounce(e => {
         counter++;
         console.log("clicked " + counter)
     }, 2000));
