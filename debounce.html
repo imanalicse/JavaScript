@@ -2,13 +2,13 @@
 <button id="buttonId">click me</button>
 <script>
     const debounce = (fn, delay) => {
-        let timeoutId;
+        let timeoutID;
         return function(...args) {
-            if (timeoutId) {
-                clearTimeout(timeoutId)
+            if (timeoutID) {
+                clearTimeout(timeoutID)
             }
-            timeoutId = setTimeout(()=>{
-                fn()
+            timeoutID = setTimeout(()=>{
+                fn(...args)
             }, delay)
         }    
     }
