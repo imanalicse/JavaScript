@@ -1,0 +1,23 @@
+
+<button id="buttonId">Throttle</button>
+<script>
+    const throttle = (fn, delay) => {    
+        return function(...args) {
+            let last = 0;
+            const now = new Date().getTime();
+            if (now - last < delay) {
+                return;
+            }
+            last = now;
+            return fn(...args);
+        }    
+    }
+    
+    let counter = 0;
+    var button = document.getElementById('buttonId');
+    button.addEventListener('click', throttle(e => {
+        counter++;
+        console.log("click me " + counter)
+    }, 2000));
+
+</script>
