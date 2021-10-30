@@ -6,7 +6,10 @@ const sendHttpRequest = (method, url, data) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
         xhr.responseType = 'json';
-        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        if (data) {
+            xhr.setRequestHeader('Content-Type', 'application/json');
+        }
 
         xhr.onload = (response) => {
             if (xhr.status >= 400) {
