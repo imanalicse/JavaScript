@@ -37,7 +37,7 @@ const getData = () => {
 const postData = () => {
     sendHttpRequest('POST', 'https://reqres.in/api/register', {
         "email": "eve.holt@reqres.in",
-        //"password": "pistol"
+        "password": "pistol"
     })
     .then(responseData => {
         console.log(responseData);
