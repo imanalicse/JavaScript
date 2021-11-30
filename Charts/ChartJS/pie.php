@@ -12,8 +12,8 @@
 <div class="container">
     <div class="chart_container">
         <div>Pie Chart</div>
-        <div style="width: 500px; height: 500px; border: 3px solid red">
-            <canvas id="pie_chart" width="400" height="400"></canvas>
+        <div style="border: 3px solid red">
+            <canvas id="pie_chart"></canvas>
         </div>
     </div>
 </div>
@@ -49,21 +49,12 @@ var pie_chart = new Chart(pie_ctx, {
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            },
-            x: {
-                ticks : {
-                    mirror: true
-                }
-            }
-        },
-        plugins: {
-              outlabels: false
+        legend: {
+            position: 'bottom'
         },
         tooltips: {
-            yAlign: 'bottom',
+            mode: 'nearest',
+            //yAlign: 'bottom',
             xPadding: 15,
             yPadding: 10,
             callbacks: {
