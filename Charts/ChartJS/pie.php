@@ -64,20 +64,25 @@ var pie_chart = new Chart(pie_ctx, {
         },
         tooltips: {
             yAlign: 'bottom',
+            xPadding: 15,
+            yPadding: 10,
             callbacks: {
-                labelColor: function(tooltipItem, chart) {
-                    return {
-                        backgroundColor: 'pink'
-                    }
-                },
+                label: function(tooltipItem, data) {
+                    var newData = data.datasets[tooltipItem.datasetIndex].data;
+                    let sum = newData.reduce(function (a, b) {
+                          return a + b;
+                        }, 0);
+                    var dataValue = newData[tooltipItem.index];
+                    var first_line_data = data.labels[tooltipItem.index];
+                    var second_line_data = dataValue + '% (' + sum + ')';
+                    return [first_line_data, second_line_data];
+                  }
             },
             backgroundColor: '#fff',
             bodyFontColor: '#000',
-            // displayColors: false,
-            // borderWidth: 1,
-            // borderColor: '#22B0AF',
-            // boxHeight: 160,
-            // boxWidth: 200
+            displayColors: false,
+            borderWidth: 1,
+            borderColor: '#22B0AF',
         }
     }
 });
