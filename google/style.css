@@ -1,0 +1,25 @@
+
+#map {
+  margin: 0 auto;
+  width: 400px;
+  height: 350px;
+  border: 1px solid green;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #ccc;
+  justify-content: center;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+}
+.flex-container div.search-box {
+  width: 600px;
+}
+.flex-container div.search-box input {
+  width: 400px;
+}

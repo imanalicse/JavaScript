@@ -1,1 +1,7 @@
 .idea
+*.log
+vendor/
+*.xlsx
+.env
+uploads/
+google/config.js
