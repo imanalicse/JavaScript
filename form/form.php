@@ -2,7 +2,7 @@
 <script src="file_validation.js"></script>
 <script src="form.js"></script>
 
-<form action="save.php" method="post" enctype="multipart/form-data" id="file_form">
+<form action="submit.php" method="post" enctype="multipart/form-data" id="file_form">
     <label>First Name</label>
     <input type="text" name="first_name" class=""><br>
     <label>Picture</label>

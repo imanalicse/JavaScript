@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             console.log(p)
         }
         var request = new XMLHttpRequest();
-        request.open("POST", "http://localhost/codehub/JavaScript/form/save.php", true);
+        request.open("POST", "http://localhost/codehub/JavaScript/form/submit.php", true);
         request.onload = function (oEvent) {
             if (request.status == 200) {
                 let response = request.response;
