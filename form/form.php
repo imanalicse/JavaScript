@@ -5,8 +5,10 @@
 <form action="save.php" method="post" enctype="multipart/form-data" id="file_form">
     <label>First Name</label>
     <input type="text" name="first_name" class=""><br>
-    <label>Image</label>
-    <input type="file" name="image" class="" multiple>
+    <label>Picture</label>
+    <input type="file" name="picture" class=""><br>
+    <label>files</label>
+    <input type="file" name="multiple_files[]" class="" multiple>
     <input type="submit" value="Submit">
 </form>
 <div></div>
