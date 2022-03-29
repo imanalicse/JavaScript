@@ -1,4 +1,7 @@
 <?php
-//include '../../functions.php';
+include '../functions.php';
 
-$post_data = $_POST;
+waLog('$_POST');
+waLog($_POST);
+waLog('$_FILES');
+waLog($_FILES);
