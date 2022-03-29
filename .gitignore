@@ -4,4 +4,4 @@ vendor/
 *.xlsx
 .env
 uploads/
-google/config.js
+config.js

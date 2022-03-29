@@ -3,7 +3,7 @@
 <head>
     <title>Address Auto Complete</title>
     <link rel="stylesheet" href="style.css">
-    <script src="config.js"></script>
+    <script src="../config.js"></script>
     <script>
         const google_map_api = config.google_map_api;
         const src = "https://maps.googleapis.com/maps/api/js?key=" + google_map_api + "&libraries=places&v=weekly";

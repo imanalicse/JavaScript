@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    var form = document.getElementById("file_form");
-    form.addEventListener('submit', function(ev) {
-        var myFormData = new FormData(form);
+    var formElem = document.getElementById("file_form");
+    formElem.addEventListener('submit', function(ev) {
+        ev.preventDefault();
+        var myFormData = new FormData(formElem);
         myFormData.append("password", "123456");
+        myFormData.append("test", "filename.txt");
         for (var keyValue of myFormData) {
             console.log(keyValue[0] + ': ', keyValue[1]);
         }
@@ -10,9 +12,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
             console.log(p)
         }
         var request = new XMLHttpRequest();
-        request.open("POST", "http://localhost/codehub/JavaScript/form/save.php");
-        request.send(myFormData);
+        request.open("POST", "http://localhost/codehub/JavaScript/form/save.php", true);
+        request.onload = function (oEvent) {
+            if (request.status == 200) {
+                let response = request.response;
+                console.log('response', response);
+            }
+            else {
 
-        ev.preventDefault();
+            }
+        }
+        request.send(myFormData);
     }, false);
 });
