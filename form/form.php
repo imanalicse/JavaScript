@@ -1,5 +1,5 @@
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="assets/file_validation.js"></script>
+<script src="file_validation.js"></script>
 
 <form action="save.php" method="post" enctype="multipart/form-data" id="">
     <label>Image</label>
