@@ -6,3 +6,10 @@ function reducer(previous, current, index, array) {
   return returns;
 }
 array.reduce(reducer);
+
+console.warn("How reduce() works with an initial value");
+array.reduce( (previous, current, index, array) => {
+  const returns = previous + current;
+  console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`);
+  return returns;
+}, 10 )
