@@ -1,5 +1,5 @@
 /**
- * Destructuring assignment is a special syntax that allows us to unpack values from arrays,
+ * The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays
  * or properties from objects, into distinct variables.
  */
 
@@ -11,16 +11,42 @@ console.log(b); // expected output: 20
 console.log(rest); // expected output: Array [30,40,50]
 
 //Default values
-let a, b;
-[a=5, b=7] = [1];
-console.log(a); // 1
-console.log(b); // 7
+let x, y;
+[x=5, y=7] = [1];
+console.log(x); // 1
+console.log(y); // 7
 
-//Object destructuring
-const user = {
+console.warn('Object destructuring')
+const person = {
     id: 42,
     isVerified: true
 };
-const {id, isVerified} = user;
-console.log(id); // 42
+const { id: id_number, isVerified } = person;
+console.log(id_number); // 42
 console.log(isVerified); // true
+
+console.warn('Unpacking properties from objects passed as a function parameter');
+
+const user = {
+  id: 42,
+  displayName: 'jdoe',
+  fullName: {
+    firstName: 'John',
+    lastName: 'Doe'
+  }
+};
+
+function userInfo({id, displayName: dname, fullName: {firstName: name}}) {
+    console.log(`${id} : ${dname} is ${name}`);
+}
+userInfo(user);
+
+console.warn('Setting a function parameter\'s default value');
+function drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {
+  console.log(size, coords, radius);
+}
+
+drawChart({
+  coords: {x: 18, y: 30},
+  radius: 30
+});
