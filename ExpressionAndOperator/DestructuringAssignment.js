@@ -50,3 +50,17 @@ drawChart({
   coords: {x: 18, y: 30},
   radius: 30
 });
+
+console.warn('Computed object property names and destructuring');
+let key = 'z';
+let {[key]: foo} = {z: 'bar'};
+console.log(foo); // "bar"
+
+console.warn('Combined Array and Object Destructuring');
+const props = [
+  { id: 1, name: 'Fizz'},
+  { id: 2, name: 'Buzz'},
+  { id: 3, name: 'FizzBuzz'}
+];
+const [,, { name }] = props;
+console.log(name); // "FizzBuzz"
