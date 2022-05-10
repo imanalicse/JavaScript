@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Style</title>
+</head>
+<body>
+<div id="item" class="container background-red" style="width: 100%; height: 100px; background: palegoldenrod; text-align: center;">
+    <p> This is type example</p>
+</div>
+<script type="text/javascript">
+    let element = document.getElementById('item');
+    // Setting styles
+    element.style.color = "red"; // A style declaration is reset by setting it to null or an empty string, e.g., elt.style.color = null.
+
+    //Getting style information
+    var elementStyle = element.style;
+    console.warn('element.style')
+    console.log(elementStyle); // get inline style
+
+    console.warn('elementStyleLoop')
+    for (prop1 in elementStyle) {
+        console.log(prop1)
+    }
+    console.warn('elementStyleLoopEND===')
+
+    var computedStyle = window.getComputedStyle(element, null); // get all style inline or applied by css
+    console.log('computedStyle=', computedStyle);
+
+    var out = "";
+    for (prop in elementStyle) {
+      if (elementStyle.hasOwnProperty(prop)) {
+        out += "  " + prop + " = '" + elementStyle[prop] + "' > '" + computedStyle[prop] + "'\n";
+      }
+    }
+    console.log(out);
+
+
+</script>
+</body>
+</html>
