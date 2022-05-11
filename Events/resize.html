@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resize</title>
+</head>
+<body>
+<p>The resize event fires when the document view (window) has been resized.</p>
+
+<p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+
+<script>
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+window.addEventListener('resize', function () {
+    console.log('==========');
+    console.log('innerWidth', window.innerWidth);
+    console.log('innerHeight', window.innerHeight);
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+});
+</script>
+</body>
+</html>
