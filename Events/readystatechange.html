@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ready State Change</title>
+</head>
+<body>
+    <script>
+    /**
+     * The readystatechange event is fired when the readyState attribute of a document has changed.
+     * This event is not cancelable and does not bubble.
+     */
+    window.addEventListener('load', (event) => {
+        console.warn('load');
+    });
+
+    document.addEventListener('readystatechange', (event) => {
+        console.warn('readyState: ', document.readyState);
+        if (event.target.readyState === 'loading') {
+            // The document is still loading.
+        }
+        if (event.target.readyState === 'interactive') {
+            // The document has finished loading. We can now access the DOM elements.
+            // But sub-resources such as scripts, images, stylesheets and frames are still loading.
+            // initLoader();
+        }
+        else if (event.target.readyState === 'complete') {
+             // The page is fully loaded.
+            // initApplication();
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.warn('DOMContentLoaded');
+    });
+    </script>
+</body>
+</html>
