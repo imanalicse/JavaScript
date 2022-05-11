@@ -5,10 +5,32 @@
     <title>Custom Event</title>
 </head>
 <body>
+
 <form>
-  <textarea></textarea>
+  <textarea placeholder="Type here & see in console"></textarea>
 </form>
 
 <script src="CustomEvent.js"></script>
+
+<br>
+<button id="menu">Menu (click me)</button>
+
+<script>
+  // https://javascript.info/dispatch-events#custom-events
+  menu.onclick = function() {
+    alert(1);
+    menu.dispatchEvent(new CustomEvent("menu-open", {
+      bubbles: true
+    }));
+    alert(2);
+  };
+  // triggers between 1 and 2
+  document.addEventListener('menu-open', () => alert('nested'));
+</script>
+
+<br>
+<br>
+<a href="https://blog.logrocket.com/custom-events-in-javascript-a-complete-guide/">Need to read</a>
+
 </body>
 </html>
