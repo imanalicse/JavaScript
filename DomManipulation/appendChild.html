@@ -12,23 +12,24 @@
     </ul>
 
     <script type="text/javascript">
+    function createMenuItem(name) {
+         let li = document.createElement("li");
+         li.textContent = name;
+         return li;
+    }
+
     /**
      The appendChild() is a method of the Node interface.
      The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node.
      */
 
-        function createMenuItem(name) {
-             let li = document.createElement("li");
-             li.textContent = name;
-             return li;
-        }
-        const menu = document.getElementById('menu');
-        menu.appendChild(createMenuItem("About"));
-        menu.prepend(createMenuItem("Home"));
-        console.log(menu.firstChild.innerHTML);
-        if (menu.hasChildNodes()) {
-            menu.removeChild(menu.childNodes[0]);
-        }
+    const menu = document.getElementById('menu');
+    menu.appendChild(createMenuItem("About"));
+    menu.prepend(createMenuItem("Home"));
+    console.log(menu.firstChild.innerHTML);
+    if (menu.hasChildNodes()) {
+        menu.removeChild(menu.childNodes[0]);
+    }
     </script>
 </body>
 </html>
