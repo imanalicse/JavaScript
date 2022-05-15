@@ -12,3 +12,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
 });
+
+addEventListener('readystatechange', event => { });
+addEventListener('beforeunload', event => { });
