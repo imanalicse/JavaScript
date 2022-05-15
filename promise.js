@@ -64,3 +64,5 @@ Promise.all([func1(), func2(), func3()])
         console.log('result3', result3);
     });
 // func3().then(res => console.log(res));
+
+// next -- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
