@@ -27,8 +27,10 @@
     menu.appendChild(createMenuItem("About"));
     menu.prepend(createMenuItem("Home"));
     console.log(menu.firstChild.innerHTML);
+    console.log(menu.lastChild.innerHTML);
+    console.log(menu.baseURI);
     if (menu.hasChildNodes()) {
-        menu.removeChild(menu.childNodes[0]);
+        // menu.removeChild(menu.childNodes[0]);
     }
     </script>
 </body>
