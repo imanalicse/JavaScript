@@ -20,8 +20,31 @@ The export parameters specify individual named exports, while the import * as na
 import * as myModule from '/modules/my-module.js';
 myModule.doAllTheAmazingThings();
 */
-// Import a single export from a module
-// import {foo, bar} from '/modules/my-module.js';
+/**
+import {foo, bar} from '/modules/my-module.js'; // Import a single export from a module
+import {foo, bar} from '/modules/my-module.js'; // Import multiple exports from module
+ */
+
+/**
+Import an entire module for side effects only, without importing anything.
+This runs the module's global code, but doesn't actually import any values.
+
+import '/modules/my-module.js';
+
+This works with dynamic imports as well:
+(async () => {
+  if (somethingIsTrue) {
+    // import module for side effects
+    await import('/modules/my-module.js');
+  }
+})();
+*/
+
+import getPost from './export';
+
+getPost("https://jsonplaceholder.typicode.com/posts", data => {
+  console.log(data);
+})
 
 // Continue
 
