@@ -1,0 +1,40 @@
+<script>
+/**
+The dataset read-only property of the HTMLElement interface provides read/write
+access to custom data attributes (data-*) on elements.
+
+In HTML:
+The attribute name begins with data-. It can contain only letters, numbers, dashes (-),periods (.),
+colons (:), and underscores (_). Any ASCII capital letters (A to Z) are converted to lowercase.
+
+In JavaScript:
+The property name of a custom data attribute is the same as the HTML attribute without the data- prefix,
+and removes single dashes (-) for when to capitalize the property's "camelCased" name.
+
+Accessing values:
+Attributes can be set and read by the camelCase name/key as an object property of the dataset: element.dataset.keyname
+Attributes can also be set and read using bracket syntax: element.dataset['keyname']
+The in operator can check if a given attribute exists: 'keyname' in element.dataset
+
+Setting values:
+When the attribute is set, its value is always converted to a string. For example: element.dataset.example = null is converted into data-example="null".
+To remove an attribute, you can use the delete operator: delete element.dataset.keyname
+*/
+</script>
+
+<div id="user" data-id="1234567890" data-user="johndoe" data-date-of-birth>John Doe</div>
+
+<script>
+    const el = document.getElementById("user");
+    console.log(el.dataset);
+    // set a data attribute
+    el.dataset.dateOfBirth = '1960-10-03';
+    el.dataset.age = '40';
+    if ('businessId' in el.dataset === false) {
+        el.dataset.businessId = '456789';
+    }
+    // Accessing value
+    console.log(el.dataset);
+    console.log(el.dataset.businessId);
+    console.log(el.dataset['businessId']);
+</script>
