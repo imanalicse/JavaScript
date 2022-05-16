@@ -1,7 +1,7 @@
 let selector = document.querySelector("#test");
 /** This handler will be executed only once when the cursor moves over the element */
 selector.addEventListener('mouseenter', event => {
-     console.log('mouseenter');
+     console.log('mouseenter', event);
      event.target.style.border = '2px solid green';
 });
 
@@ -22,6 +22,24 @@ selector.addEventListener('mouseover', event => {
 
 selector.addEventListener('mouseout', event => {
  console.log('mouseout');
+});
+
+/**
+The contextmenu event fires when the user attempts to open a context menu.
+This event is typically triggered by clicking the right mouse button, or by pressing the context menu key.
+*/
+const context = document.getElementById('contextMenu');
+context.addEventListener("contextmenu", e => {
+    console.log('contextmenu', e);
+});
+/**
+Any right-click event that is not disabled (by calling the event's preventDefault() method)
+will result in a contextmenu event being fired at the targeted element.
+*/
+const noContext = document.getElementById('noContextMenu');
+noContext.addEventListener('contextmenu', e => {
+  e.preventDefault();
+  console.log('contextmenuPreventDefault', e);
 });
 
 /*
