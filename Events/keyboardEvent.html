@@ -1,0 +1,27 @@
+<style>
+ #test {
+   width: 400px; margin: 0 auto; background: palegoldenrod; display: block; padding: 10px;
+ }
+</style>
+ <div id="test">
+    <div>
+       Keyboard Event: <input id="input_event_input">
+       <span id="input_event_value"></span>
+   </div>
+ </div>
+
+<script>
+    document.querySelector("#input_event_input").addEventListener('keyup', e => {
+     console.log('keyup', e.code);
+     document.querySelector('#input_event_value').textContent = e.code;
+    });
+
+    document.querySelector("#input_event_input").addEventListener('keydown', e => {
+         console.log('keydown', e.code);
+         document.querySelector('#input_event_value').textContent = e.code;
+    });
+    /**
+    The keydown event is fired when a key is pressed.
+    The keyup event is fired when a key is released.
+    */
+</script>
