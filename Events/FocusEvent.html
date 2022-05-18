@@ -1,0 +1,26 @@
+<style>
+ #test {
+   width: 400px; margin: 0 auto; background: palegoldenrod; display: block; padding: 10px;
+ }
+</style>
+ <div id="test">
+    <div>
+       Focus Event: <input id="input_event_input">
+       <span id="input_event_value"></span>
+   </div>
+ </div>
+
+<script>
+    let element = document.querySelector("#input_event_input");
+    element.addEventListener('focusin', e => { console.log('focusin'); });
+    element.addEventListener('focusout', e => { console.log('focusout'); });
+    element.addEventListener('focus', e => { console.log('focus'); });
+    element.addEventListener('blur', e => { console.log('blur'); });
+    /**
+    focus: Fired when an element has gained focus.
+    focus: Fired when an element has lost focus.
+    focusin: Fired when an element is about to gain focus.
+    focusout: Fired when an element is about to lose focus.
+    Difference between focus and focusin event is that focusin bubbles while focus does not.
+    */
+</script>
