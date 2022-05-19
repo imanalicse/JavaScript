@@ -1,0 +1,82 @@
+<style>
+ #test {
+   width: 450px; margin: 0 auto; background: palegoldenrod; display: block; padding: 10px;
+
+ }
+.target:empty:before {
+    content: attr(data-placeholder);
+}
+</style>
+ <div id="test">
+    <div>
+       <textarea id="editor" rows="5" cols="50" width="100%"></textarea>
+       <span id="input_event_value"></span>
+   </div>
+    <br>
+    <div class="source" contenteditable="true" style="border: 1px solid green;margin-bottom: 10px">Try copying text from this box...</div>
+    <div class="target" contenteditable="true" style="border: 1px solid green" data-placeholder="pasting it into this one"></div>
+    <br>
+    <input type="text" id="text-box" size="20" value="Hello world!">
+    <button onclick="selectText()">Select text</button>
+    <button onclick="cutText()">Cut text</button>
+    <button onclick="copyText()">Copy text</button>
+ </div>
+
+
+
+
+<script>
+    let editor = document.querySelector("#editor");
+    editor.addEventListener('paste', e => {
+         var clipboardData, pastedData;
+           // Stop data actually being pasted into div
+          e.stopPropagation();
+          e.preventDefault();
+          // Get pasted data via clipboard API
+          clipboardData = e.clipboardData || window.clipboardData;
+          pastedData = clipboardData.getData('Text');
+          console.log(pastedData)
+          alert(pastedData)
+    });
+
+    const source = document.querySelector('div.source');
+    source.addEventListener('copy', (event) => {
+        const selection = document.getSelection();
+        event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+        event.preventDefault();
+    });
+
+    source.addEventListener('cut', (event) => {
+        const selection = document.getSelection();
+        event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+        selection.deleteFromDocument();
+        event.preventDefault();
+    });
+
+    function selectText() {
+      const input = document.getElementById('text-box');
+      input.focus();
+      input.select();
+    }
+
+    function cutText() {
+      const input = document.getElementById('text-box');
+      input.focus();
+      input.select();
+      const selection = document.getSelection();
+      console.log(selection.toString());
+      selection.deleteFromDocument();
+    }
+
+    function copyText() {
+      const input = document.getElementById('text-box');
+      input.focus();
+      input.select();
+      // document.execCommand('copy');
+      // following are alternative of document.execCommand
+      const selection = document.getSelection();
+      navigator.clipboard.writeText(selection.toString());
+    }
+
+
+</script>
