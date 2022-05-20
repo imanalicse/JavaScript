@@ -1,0 +1,99 @@
+<html>
+ <body>
+  <div class="main"> Main
+   <div class="one"> One
+    <div class="two"> Two
+      <div class="three">Thee</div>
+    </div>
+   </div>
+  </div>
+
+  <ul id="item_list">
+    <li class="item">
+       <p>Item one <button class="delete_bnt">Delete</button></p>
+    </li>
+    <li class="item">
+       <p>Item two <button class="delete_bnt">Delete</button></p>
+    </li>
+  </ul>
+ </body>
+</html>
+<script>
+
+const divs = document.querySelectorAll('div');
+function logText(e) {
+  console.log(this.classList.value)
+  // e.stopPropagation(); // Stop bubbling
+}
+divs.forEach(div => div.addEventListener('click', logText, {
+  capture: false // Top to bottom
+}));
+
+// Dynamic action for child element. If item added via dynamically delete action also work because of event bubbling up.
+document.getElementById("item_list").addEventListener("click", function (e) {
+  if (e.target.className === 'delete_bnt') {
+    e.target.parentElement.parentElement.remove();
+  }
+});
+
+ // let parent = document.querySelector("#parent")
+ // parent.addEventListener("click", function () {
+ //   console.log("Parent clicked")
+ // }, true); // true is capturing params. Parent first
+ //
+ // let child1 = document.querySelector("#child1")
+ // child1.addEventListener("click", function () {
+ //   console.log("Child clicked")
+ // }, true);
+
+ /**
+  * Capture is top to bottom
+  * Bubbling is bottom to top - Bubble up
+  */
+ /** Event bubbling in JavaScript
+Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element
+inside another element, and both elements have registered a handle to that event.
+It is a process that starts with the element that triggered the event and then bubbles up to the
+containing elements in the hierarchy. In event bubbling, the event is first captured and handled by
+the innermost element and then propagated to outer elements.
+Syntax:
+addEventListener(type, listener, useCapture)
+
+type: Use to refer to the type of event.
+listener: Function we want to call when the event of the specified type occurs.
+userCapture: Boolean value. Boolean value indicates event phase. By Default useCapture is false.
+It means it is in the bubbling phase.
+*/
+
+</script>
+
+<style>
+ div{
+  text-align: center;
+ }
+ .main {
+   width: 300px;
+   height: 240px;
+   margin: 0 auto;
+   background: palegoldenrod;
+   padding: 20px;
+ }
+ .one {
+   background: #cccccc;
+   padding: 20px;
+   width: calc(100% - 40px);
+   height: calc(100% - 80px);
+ }
+ .two {
+   background: cadetblue;
+   padding: 20px;
+   width: calc(100% - 40px);
+   height: calc(100% - 80px);
+ }
+ .three {
+   background: #cccccc;
+   padding: 20px;
+   width: calc(100% - 40px);
+   height: calc(100% - 80px);
+ }
+</style>
