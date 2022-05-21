@@ -83,3 +83,16 @@ console.log('all_books', all_books);
 //   'Romeo and Juliet', 'The Lord of the Rings',
 //   'The Shining'
 // ]
+
+/** Remove duplicate items in an array  */
+const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+const uniqueItems = myArray.reduce((previousValue, currentValue) => {
+  if (previousValue.indexOf(currentValue) === -1) {
+    previousValue.push(currentValue)
+  }
+  return previousValue
+}, []);
+console.log('uniqueItems', uniqueItems); // ['a', 'b', 'c', 'e', 'd']
+
+/** Replace .filter().map() with .reduce() */
+// TODO
