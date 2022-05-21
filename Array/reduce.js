@@ -53,3 +53,33 @@ function groupBy(objectArray, property) {
 
 let groupedPeople = groupBy(people, 'age')
 console.warn('Grouping objects by a property', groupedPeople)
+// groupedPeople is:
+// {
+//   20: [
+//     { name: 'Max', age: 20 },
+//     { name: 'Jane', age: 20 }
+//   ],
+//   21: [{ name: 'Alice', age: 21 }]
+// }
+/**  Bonding arrays contained in an array of objects using the spread operator and initialValue  */
+const friends = [{
+  name: 'Anna',
+  books: ['Bible', 'Harry Potter'],
+  age: 21
+}, {
+  name: 'Bob',
+  books: ['War and peace', 'Romeo and Juliet'],
+  age: 26
+}, {
+  name: 'Alice',
+  books: ['The Lord of the Rings', 'The Shining'],
+  age: 18
+}]
+
+let all_books = friends.reduce((acc, currentValue) => [...acc, ...currentValue.books] , ['Alphabet'])
+console.log('all_books', all_books);
+// allbooks = [
+//   'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
+//   'Romeo and Juliet', 'The Lord of the Rings',
+//   'The Shining'
+// ]
