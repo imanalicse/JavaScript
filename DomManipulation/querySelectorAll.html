@@ -1,0 +1,18 @@
+<div class="country_list">
+    <p>Bangladesh</p>
+    <p>Australia</p>
+</div>
+<script>
+/**
+ The Document method querySelectorAll() returns a static (not live) NodeList representing a list of
+ the document's elements that match the specified group of selectors.
+ */
+
+// To obtain a NodeList of all of the <p> elements in the document
+const items = document.querySelectorAll(".country_list > p");
+console.log(items)
+items.forEach(function(item) {
+    item.style.color = 'green';
+    console.log(item)
+});
+</script>

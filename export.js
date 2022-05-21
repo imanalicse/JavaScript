@@ -51,4 +51,15 @@ We can consume the exports from a single module since parentModule "collected"/"
 import { myFunction, myVariable, myClass } from 'parentModule.js'
  */
 
+function getJSON(url, callback) {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    callback(this.responseText)
+  };
+  xhr.open('GET', url, true);
+  xhr.send();
+}
 
+export function getPost(url, callback) {
+   getJSON(url, data => callback(JSON.parse(data)));
+}

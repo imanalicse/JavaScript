@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Append Child</title>
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li>Contact</li>
+    </ul>
+
+    <script type="text/javascript">
+    function createMenuItem(name) {
+         let li = document.createElement("li");
+         li.textContent = name;
+         return li;
+    }
+
+    /**
+     The appendChild() is a method of the Node interface.
+     The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node.
+     */
+
+    const menu = document.getElementById('menu');
+    menu.appendChild(createMenuItem("About"));
+    menu.prepend(createMenuItem("Home"));
+    console.log(menu.firstChild.innerHTML);
+    console.log(menu.lastChild.innerHTML);
+    console.log(menu.baseURI);
+    if (menu.hasChildNodes()) {
+        // menu.removeChild(menu.childNodes[0]);
+    }
+    </script>
+</body>
+</html>
