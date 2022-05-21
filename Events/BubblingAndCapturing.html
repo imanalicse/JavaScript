@@ -26,7 +26,7 @@ function logText(e) {
   // e.stopPropagation(); // Stop bubbling
 }
 divs.forEach(div => div.addEventListener('click', logText, {
-  capture: false // Top to bottom
+  capture: false // default false: bottom to top, true: Top to bottom,
 }));
 
 // Dynamic action for child element. If item added via dynamically delete action also work because of event bubbling up.
