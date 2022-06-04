@@ -21,3 +21,14 @@ export const sessionStorage = Object.create(null, {
 })
 
 export const UUID_REGEXP = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/gi
+
+
+// sleep time expects milliseconds
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+// Usage!
+sleep(1000).then(() => {
+    // Do something after the sleep!
+});
