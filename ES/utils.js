@@ -24,11 +24,12 @@ export const UUID_REGEXP = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}
 
 
 // sleep time expects milliseconds
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Usage!
-sleep(1000).then(() => {
-    // Do something after the sleep!
-});
+console.log('Hello')
+sleep(2000)
+  .then(() => console.log('world!'))
+  .then(() => sleep(2000))
+  .then(() => console.log('Goodbye!'))
