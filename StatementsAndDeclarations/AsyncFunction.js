@@ -16,7 +16,9 @@ function makeRequest(location) {
     return new Promise((resolve, reject) => {
         console.log(`Making request to ${location}`);
         if (location === 'Google') {
-            resolve('Google says hi')
+            setTimeout(function () {
+                resolve('Google says hi')
+            }, 1500)
         }
         else {
             reject('We can only talk to Google')
@@ -27,7 +29,9 @@ function makeRequest(location) {
 function processRequest(response) {
     return new Promise((resolve, reject) => {
         console.log("Processing response");
-        resolve(`Extra information: ${response}`)
+        setTimeout(()=> {
+            resolve(`Extra information: ${response}`)
+        }, 1000)
     })
 }
 
