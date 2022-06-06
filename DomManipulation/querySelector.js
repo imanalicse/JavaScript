@@ -13,3 +13,5 @@ var el = document.querySelector("div.user-panel.main input[name='login']");
 
 // Negation
 var el = document.querySelector("div.user-panel:not(.main) input[name='login']");
+
+// evt.target.parentElement.querySelector(".add-and-btn").style.border = '1px solid green';
