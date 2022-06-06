@@ -32,3 +32,30 @@ ratings.forEach( (rating) => {
     sum =  sumFunction(sum, rating);
 });
 console.log('sum = ' + sum);
+
+console.warn('Parameter destructuring and forEach()');
+let components = {
+    'e799ee81-6def-4628-b799-e51aa8864271': {
+       attrs: [], 
+       conditions : [
+           {
+                if: 'IF',
+                then: 'IF'
+           }
+       ]
+    },
+    'e7f86a17-7479-4622-9152-999009c474b8': {
+        conditions2 : [
+           {
+                if2: 'IF2',
+                then2: 'IF2'
+           }
+       ]
+    }
+}
+
+Object.values(components).forEach(({ conditions }) => {
+    console.log(conditions)
+    if (conditions) {
+    }
+});
