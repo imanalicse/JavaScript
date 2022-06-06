@@ -64,3 +64,21 @@ const props = [
 ];
 const [,, { name }] = props;
 console.log(name); // "FizzBuzz"
+
+
+/**
+ * Parameter destructuring and forEach()
+ * https://2ality.com/2013/02/foreach-es6.html
+ */
+console.warn('Parameter destructuring and forEach()');
+// For Array - name can be anything such as you can write word2
+let items = [ ['foo', 3], ['bar', 9] ];
+items.forEach(([word, count]) => {
+    console.log(word+' '+count)
+});
+
+// For Object - name should be same object key
+let items2 = [ {word:'foo', count:3}, {word:'bar', count:9} ];
+items2.forEach(({word, count}) => {
+    console.log(word + ' ' + count)
+});
