@@ -22,5 +22,8 @@ console.log(Employee);
 // When trying to delete a property that does not exist, true is returned
 console.log(delete Employee.salary); // returns true
 
-// Deleting array elements
+/** Deleting array elements
+When the delete operator removes an array element, that element is no longer in the array.
+*/
+
 // TODO - continue
