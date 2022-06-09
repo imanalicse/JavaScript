@@ -1,0 +1,36 @@
+<!-- Given:-->
+<div>
+  <span id="childSpan">foo bar</span>
+</div>
+<script>
+/**
+ The replaceChild() method of the Node element replaces a child node within the given (parent) node.
+*/
+
+// Create an empty element node
+// without an ID, any attributes, or any content
+const sp1 = document.createElement("span");
+
+// Give it an id attribute called 'newSpan'
+sp1.id = "newSpan";
+
+// Create some content for the new element.
+const sp1_content = document.createTextNode("new replacement span element.");
+
+// Apply that content to the new element
+sp1.appendChild(sp1_content);
+
+// Build a reference to the existing node to be replaced
+const sp2 = document.getElementById("childSpan");
+const parentDiv = sp2.parentNode;
+
+// Replace existing node sp2 with the new span element sp1
+parentDiv.replaceChild(sp1, sp2);
+</script>
+
+<!--
+Result:
+ <div>
+   <span id="newSpan">new replacement span element.</span>
+ </div>
+-->
