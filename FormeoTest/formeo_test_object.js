@@ -163,11 +163,12 @@ conditions = [
         ]
     }
 ]
-
-//console.log(conditions);
+console.log('==========conditions=======');
+console.log(conditions);
 
   mergeIfModeConditions = (conditions) => {
       const newConditions = JSON.parse(JSON.stringify(conditions));
+      let processedConditions = [];
       if (newConditions) {
           let lastIfThenIndex = 0;
           let deletedCount = 0;
@@ -176,21 +177,31 @@ conditions = [
                   lastIfThenIndex = i;
             }
             // console.log(i + ' = lastIfThenIndex = ' + lastIfThenIndex)
-            if (!('then' in condition)) {
+            if (('if' in condition) && ('then' in condition)) {
+                processedConditions[i] = condition
+            }
+            else if (('if' in condition) && !('then' in condition)) {
                   // console.log('then not =' + i + '>' + lastIfThenIndex, conditions)
-                  newConditions[lastIfThenIndex]['if'].push(condition['if'][0])
-                  const sliceIndex = i - deletedCount;
-                   newConditions.splice(sliceIndex, 1);
-                  deletedCount++;
+                  // newConditions[lastIfThenIndex]['if'].push(condition['if'][0])
+                  // const sliceIndex = i - deletedCount;
+                  //  newConditions.splice(sliceIndex, 1);
+                  // deletedCount++;
+
+                  processedConditions[lastIfThenIndex]['if'].push(condition['if'][0])
+                  // const sliceIndex = i - deletedCount;
+                  //  newConditions.splice(sliceIndex, 1);
+                  // deletedCount++;
+
             }
         });
       }
-      return newConditions;
+      return processedConditions;
   }
 
-conditions = mergeIfModeConditions(conditions);
+let newConditions = mergeIfModeConditions(conditions);
+console.log(newConditions)
 
-console.log('===============')
+console.log('------------------')
 // console.log(conditions);
 const LOGICAL_OPERATORS = {
   and: '&&',
