@@ -14,7 +14,7 @@
 
  localStorage.setItem('name', 'Iman')
  // localStorage.removeItem('name')
- console.log(localStorage.getItem('name'));
+ console.log('localstorage: name', localStorage.getItem('name'));
 
 /** The syntax for removing all the localStorage items is as follows:
  * localStorage.clear();
@@ -65,7 +65,17 @@ const person = {
     age: 40
 }
 
-localStore.set('person', person);
+// localStore.set('person', person);
 // localStore.remove('person');
 // localStore.clear();
 console.log(localStore.get('person'))
+
+console.log(window.performance)
+
+window.onbeforeunload = function () {
+ return "Please click 'Stay on this Page' and we will give you candy";
+};
+
+addEventListener('beforeunload', event => {
+   localStore.remove('person');
+});
