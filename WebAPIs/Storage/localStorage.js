@@ -64,7 +64,8 @@ const person = {
     name: 'John Doe',
     age: 40
 }
-const cartKey = 'cart';
 
-localStore.set(cartKey, person);
+localStore.set('person', person);
+// localStore.remove('person');
+// localStore.clear();
 console.log(localStore.get('person'))
