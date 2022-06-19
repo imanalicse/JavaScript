@@ -14,4 +14,8 @@ window.addEventListener('load', (event) => {
 });
 
 addEventListener('readystatechange', event => { });
-addEventListener('beforeunload', event => { });
+addEventListener('beforeunload', event => {
+    event.preventDefault();
+    console.log("Closing...........")
+    alert("xxxxx");
+});
