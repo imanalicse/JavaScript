@@ -142,3 +142,12 @@ export const copyObj = obj => window.JSON.parse(window.JSON.stringify(obj))
 export const subtract = (arr, from) => from.filter(a => !~arr.indexOf(a))
 
 export const isIE = () => window.navigator.userAgent.indexOf('MSIE ') !== -1
+
+// Loaders
+export const ajax = (file, callback, onError = noop) => {
+  return new Promise((resolve, reject) => {
+    return fetch(file)
+      .then(data => resolve(callback ? callback(data) : data))
+      .catch(err => reject(onError(err)))
+  })
+}
