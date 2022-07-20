@@ -1,6 +1,8 @@
 /**
  * The Object.entries() method returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
  * This is the same as iterating with a for...in loop, except that a for...in loop enumerates properties in the prototype chain as well.
+ * Syntax:
+ * Object.entries(obj)
  */
 
 const personObj = {
