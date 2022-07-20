@@ -1,0 +1,23 @@
+<!-- beforebegin -->
+<div id="container" style="background: #cccccc; border: 2px solid deeppink">
+  <!-- afterbegin -->
+  Content
+  <!-- beforeend -->
+</div>
+<!-- afterend -->
+
+<script>
+/**
+The insertAdjacentElement() method of the Element interface inserts a given element node
+at a given position relative to the element it is invoked upon.
+Syntax:
+insertAdjacentElement(position, element)
+ */
+
+const container = document.getElementById("container");
+const newElement = document.createElement('p');
+newElement.style.backgroundColor = "green";
+newElement.textContent = "Hello world";
+container.insertAdjacentElement("beforeend", newElement);
+
+</script>
