@@ -1,0 +1,20 @@
+<!-- beforebegin -->
+<div id="container" style="background: #cccccc; border: 2px solid deeppink">
+  <!-- afterbegin -->
+  Content
+  <!-- beforeend -->
+</div>
+<!-- afterend -->
+
+<script>
+/**
+The insertAdjacentHTML() method of the Element interface parses the specified text as HTML or XML
+and inserts the resulting nodes into the DOM tree at a specified position.
+Syntax:
+insertAdjacentHTML(position, text)
+ */
+
+const container = document.getElementById("container");
+container.insertAdjacentHTML("beforeend", "<p style='background: green'>Hello world</p>");
+
+</script>

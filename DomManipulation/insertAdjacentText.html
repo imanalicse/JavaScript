@@ -1,0 +1,20 @@
+<!-- beforebegin -->
+<div id="container" style="background: #cccccc; border: 2px solid deeppink">
+  <!-- afterbegin -->
+  Content
+  <!-- beforeend -->
+</div>
+<!-- afterend -->
+
+<script>
+/**
+The insertAdjacentText() method of the Element interface, given a relative position and a string,
+inserts a new text node at the given position relative to the element it is called from.
+Syntax:
+insertAdjacentText(where, data)
+ */
+
+const container = document.getElementById("container");
+container.insertAdjacentText("beforeend", "Hello world");
+
+</script>
