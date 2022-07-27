@@ -19,3 +19,7 @@ mySet.add('some text') // Set [ 1, 5, 'some text' ]
 let o = {a: 1, b: 2}
 mySet.add(o)
 console.log(mySet)
+
+for (const value of mySet) {
+  console.log(value);
+}
