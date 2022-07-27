@@ -1,0 +1,22 @@
+<select id="sel">
+  <option value='1'>One</option>
+  <option value='2'>Two</option>
+  <option value='3' selected>Three</option>
+</select>
+<input type="button" value="Change option to 2" />
+
+<script>
+  let select = document.querySelector('#sel'),
+  button = document.querySelector('input[type="button"]');
+  select.addEventListener('change',function(){
+      console.log("Change event -> " + select.value);
+  });
+  button.addEventListener('click',function(){
+      triggerChange(select, 2);
+  });
+  function triggerChange(element, value) {
+    element.value = value;
+    let changeEvent = new Event("change");
+    element.dispatchEvent(changeEvent);
+  }
+</script>
