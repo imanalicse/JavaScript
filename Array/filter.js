@@ -1,5 +1,7 @@
 /**
  * The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+ * Syntax:
+ * filter((element) => {  } )
  * filter(function(element, index, array) {  }, thisArg)
  */
 
