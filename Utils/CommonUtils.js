@@ -44,7 +44,8 @@ function toTitleCase(str) {
 // https://stackoverflow.com/questions/1053902/how-to-convert-a-title-to-a-url-slug-in-jquery
 const convertToSlug = (str) => {
   return str.toLowerCase().trim()
-    .replace(/ /g,'-') // Replace spaces with -
+    .replace(/\s+/g, '-') // Replace spaces with -
+    // .replace(/ /g,'-') // Replace spaces with -
     .replace(/[-]+/g, '-') // To avoid multiple sequential hyphens
     .replace(/[^\w-]+/g,'') // Replace special characters. another removes anything not alphanumeric, underscore, or hyphen
 }
