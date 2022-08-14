@@ -1,0 +1,20 @@
+<script>
+/**
+ * The getElementsByClassName method of Document interface returns an array-like object of
+ * all child elements which have all of the given class name(s).
+ */
+</script>
+
+<div class="orange fruit">Orange Fruit</div>
+<div class="orange juice">Orange Juice</div>
+<div class="apple juice">Apple Juice</div>
+<div class="foo bar">Something Random</div>
+
+<script>
+const oranges = document.getElementsByClassName('orange');
+console.log(oranges)
+const allOrangeJuiceByClass = document.getElementsByClassName('orange juice');
+console.log(allOrangeJuiceByClass)
+const allOrangeJuiceQuery = document.querySelectorAll('.orange.juice');
+console.log(allOrangeJuiceQuery)
+</script>
