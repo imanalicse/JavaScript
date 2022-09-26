@@ -81,3 +81,7 @@ function isEmpty(value) {
 function isEmptyObject(value) {
   return Object.keys(value).length === 0 && value.constructor === Object;
 }
+
+function getKeyByValue(object, value) {
+  return Object.keys(object).find(key => object[key] === value);
+}
