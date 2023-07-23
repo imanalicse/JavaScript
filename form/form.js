@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("clear_file").addEventListener("click", function () {
+        let file_input = document.querySelector(".picture");
+        console.log('file_input', file_input.value)
+        file_input.value = '';
+    });
+
     var formElem = document.getElementById("file_form");
     formElem.addEventListener('submit', function(ev) {
         ev.preventDefault();
