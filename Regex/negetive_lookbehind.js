@@ -7,3 +7,8 @@ console.log(person)
 let name = "Iman \n Ali";
 
 document.getElementById("test").innerHTML = name;
+
+/*
+let regex = /(?<!\\)\n/g; // Negative lookbehind - Matches "\n" only if "\n" is not preceded by "\".
+surveyFormData = surveyFormData.replace(regex, "<br/>");
+ */
