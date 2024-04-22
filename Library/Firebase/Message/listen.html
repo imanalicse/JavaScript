@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lister Message</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="message"></div>
+    <div><b>Device token</b>: <span class="device_token"></span></div>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-messaging-compat.js"></script>
+    <script src="../firebase_config.js"></script>
+</div>
+
+<script>
+    const firebaseConfig = {
+        apiKey: FIREBASE_API_KEY,
+        authDomain: "presentation-list.firebaseapp.com",
+        databaseURL: "https://presentation-list-default-rtdb.firebaseio.com",
+        projectId: "presentation-list",
+        storageBucket: "presentation-list.appspot.com",
+        messagingSenderId: "527745596923",
+        appId: "1:527745596923:web:1bc8fb91975957cf2c1f5e"
+    };
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+    navigator.serviceWorker.register('firebase-messaging-sw.js').then(registration => {
+        messaging.getToken({
+            serviceWorkerRegistration: registration,
+            vapidKey: FIREBASE_VAPIDKEY
+            })
+            .then((currentToken) => {
+            if (currentToken) {
+                console.log('currentToken: ' + currentToken)
+                document.querySelector('.device_token').textContent = currentToken;
+                // Send the token to your server and update the UI if necessary
+                // ...
+            } else {
+                // Show permission request UI
+                console.log('No registration token available. Request permission to generate one.');
+                // ...
+            }
+        }).catch((err) => {
+            console.log('An error occurred while retrieving token. ', err);
+            // ...
+        });
+    });
+
+    messaging.onMessage((payload) => {
+        console.log('Message received', payload);
+        const messageElement = document.querySelector('.message')
+        const dataHeaderElement = document.createElement('H5');
+        const dataElement = document.createElement('pre');
+        dataElement.style = "overflow-x:hidden;"
+        dataHeaderElement.textContent = "Message Received:"
+        dataElement.textContent = JSON.stringify(payload, null, 2)
+        messageElement.appendChild(dataHeaderElement)
+        messageElement.appendChild(dataElement)
+    })
+</script>
+
+</body>
+</html>
