@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lister Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -26,6 +27,7 @@
     };
     const firebaseApp = firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
+    /*
     navigator.serviceWorker.register('firebase-messaging-sw.js').then(registration => {
         messaging.getToken({
             serviceWorkerRegistration: registration,
@@ -47,6 +49,7 @@
             // ...
         });
     });
+    */
 
     messaging.onMessage((payload) => {
         console.log('Message received', payload);
