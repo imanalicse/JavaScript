@@ -16,8 +16,29 @@
     const database = firebase.database();
     const databaseRef = database.ref();
     const presentationRef  = database.ref(`presentation`);
+
+    /*
     presentationRef.on('value', (snapshot) => {
         console.log('called on value')
+        const data = snapshot.val();
+        updateUI(data);
+    });
+    */
+
+    presentationRef.on('child_added', (snapshot) => {
+        console.log('child_added - called')
+        const data = snapshot.val();
+        updateUI(data);
+    });
+
+    presentationRef.on('child_changed', (snapshot) => {
+        console.log('child_changed - called')
+        const data = snapshot.val();
+        updateUI(data);
+    });
+
+    presentationRef.on('child_removed', (snapshot) => {
+        console.log('child_removed - called')
         const data = snapshot.val();
         updateUI(data);
     });
