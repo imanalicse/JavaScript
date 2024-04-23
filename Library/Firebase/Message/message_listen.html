@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="message"></div>
-    <div><b>Device token</b>: <span class="device_token"></span></div>
+    <div><b>Token</b>: <span class="token"></span></div>
     <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-messaging-compat.js"></script>
     <script src="../firebase_config.js"></script>
@@ -34,7 +34,7 @@
             .then((currentToken) => {
             if (currentToken) {
                 console.log('currentToken: ' + currentToken)
-                document.querySelector('.device_token').textContent = currentToken;
+                document.querySelector('.token').textContent = currentToken;
                 // Send the token to your server and update the UI if necessary
                 // ...
             } else {
