@@ -44,7 +44,7 @@ function updateFirebaseData($url, $token, $data) : array {
 
 // Example usage
 $data = [
-    '1' => [
+    'latrobe' => [
         'random' => time()
     ]
 ];
