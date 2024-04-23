@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database action</title>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database-compat.js"></script>
+    <script src="../firebase_config.js"></script>
+    <script src="../firebase_common.js"></script>
+</head>
+<body>
+
+<script>
+    const firebaseConfig = FIREBASE_CONFIG;
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const databaseRef = firebase.database().ref();
+    const presentationId = '1';
+    const newUserData = {
+        random: Math.random(),
+    }
+    databaseRef.child('presentation/' + presentationId).update(newUserData)
+
+</script>
+
+
+</body>
+</html>

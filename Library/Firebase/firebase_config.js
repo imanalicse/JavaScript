@@ -1,2 +1,2 @@
-const FIREBASE_API_KEY = "AIzaSyCuc6qeQSaUlFNdjy4938Bq_sDr_pLrObw";
-const FIREBASE_VAPIDKEY = "BLx09pDHfBldkj4yPr3B8tazEObdbvG7XCuo00RffanXMiNnbgun7OuDjz9-odDWZN6FqfaOs-pi8xKtFcGmoSU";
+const FIREBASE_API_KEY = "";
+const FIREBASE_VAPIDKEY = "";
