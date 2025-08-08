@@ -8,8 +8,8 @@
  * https://github.com/Neckster/chartjs-plugin-piechart-outlabels/blob/master/LICENSE
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('chart.js')) :
-	typeof define === 'function' && define.amd ? define(['chart.js'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('GeneralLearning/Charts/ChartJS/assets/chart.js')) :
+	typeof define === 'function' && define.amd ? define(['GeneralLearning/Charts/ChartJS/assets/chart.js'], factory) :
 	(factory(global.Chart));
 }(this, (function (Chart$1) { 'use strict';
 

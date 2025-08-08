@@ -4,9 +4,9 @@ if (!function_exists('waLog')) {
     function waLog ( $log, $file_name = '', $path = '' )  {
 
         if(!empty($path)){
-            $folder = dirname(__FILE__).('/logs/'.$path);
+            $folder = functions . phpdirname(__FILE__) . ('/logs/' . $path);
         }else{
-            $folder = dirname(__FILE__).('/logs/wa-logs');
+            $folder = functions . phpdirname(__FILE__) . ('/logs/wa-logs');
         }
 
         if(!file_exists($folder)){
