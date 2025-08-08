@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/imanalicse/JavaScript#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "sortablejs": "^1.15.6"
   },
   "devDependencies": {
     "vite": "^7.1.1"

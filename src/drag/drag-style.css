@@ -1,0 +1,20 @@
+#sortable-list { sortable-list-style:none; padding:0; width:320px; }
+#sortable-list li {
+    padding:10px 12px;
+    margin:6px 0;
+    background:#fff;
+    border:1px solid #ddd;
+    cursor:grab;
+    user-select:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+#sortable-list li.dragging { opacity:0.5; }
+.placeholder {
+    height:44px;
+    margin:6px 0;
+    border:2px dashed #ccc;
+    background:#f9f9f9;
+}
+.handle { cursor:grab; margin-right:8px; color:#666; }
