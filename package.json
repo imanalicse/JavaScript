@@ -1,0 +1,23 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "autocomplete-address-form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imanalicse/JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imanalicse/JavaScript/issues"
+  },
+  "homepage": "https://github.com/imanalicse/JavaScript#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
